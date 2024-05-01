@@ -1,6 +1,11 @@
 import React from "react";
 
-const Tooltip = ({ content, children }) => {
+type TooltipProps = {
+  content: string;
+  children: React.ReactNode;
+};
+
+const Tooltip = ({ content, children }: TooltipProps) => {
   const [visible, setVisible] = React.useState(false);
   const handleMouseEnter = () => {
     setTimeout(() => {

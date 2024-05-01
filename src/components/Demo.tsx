@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { copy, linkIcon, loader, tick, copyLink, open } from "../assets";
+import { copy, linkIcon, loader, tick, openIcon } from "../assets";
 import { useLazyGetTranscriptionQuery } from "../services/video";
 import OpenAI from "openai";
 import { summaryPrompt } from "../utils/promts";
@@ -11,13 +11,13 @@ const Demo = () => {
     videoId: "",
     summary: "",
     title: "",
-    thumbnails: [],
+    thumbnails: [] as { width: number; height: number; url: string }[],
   });
 
   const [allVideos, setAllVideos] = useState<
     {
       title: string;
-      thumbnails: [];
+      thumbnails: { width: number; height: number; url: string }[];
       summary: string;
       url: string;
       videoId: string;
@@ -82,8 +82,7 @@ const Demo = () => {
     }
   };
 
-  const [getTranscription, { error, isFetching }] =
-    useLazyGetTranscriptionQuery();
+  const [getTranscription, { error }] = useLazyGetTranscriptionQuery();
 
   const getVideoId = (stringUrl: string) => {
     const url = new URL(stringUrl);
@@ -159,14 +158,16 @@ const Demo = () => {
       const obj = JSON.parse(summary);
       return (
         <ul>
-          {obj.Summary.map((point, index: number) => {
-            return (
-              <li key={`summary-${index}`} className="mb-3">
-                <span>{point["emoji"]} </span>
-                {point["point"]}
-              </li>
-            );
-          })}
+          {obj.Summary.map(
+            (point: { emoji: string; point: string }, index: number) => {
+              return (
+                <li key={`summary-${index}`} className="mb-3">
+                  <span>{point["emoji"]} </span>
+                  {point["point"]}
+                </li>
+              );
+            }
+          )}
         </ul>
       );
     } catch (e) {
@@ -281,7 +282,7 @@ const Demo = () => {
                               onClick={() => handleOpen(item.url)}
                             >
                               <img
-                                src={open}
+                                src={openIcon}
                                 alt="open_icon"
                                 className="w-[40%] h-[40%] object-contain"
                               />
@@ -290,7 +291,11 @@ const Demo = () => {
                         ></Tooltip>
                       </div>
                       <img
-                        src={item.thumbnails[4].url}
+                        src={
+                          item.thumbnails && item.thumbnails[4]
+                            ? item.thumbnails[4].url
+                            : "defaultThumbnail.png"
+                        }
                         alt="video_thumbnail"
                         className="rounded-lg"
                         width="120px"

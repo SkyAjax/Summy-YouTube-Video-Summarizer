@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+[![Maintainability](https://api.codeclimate.com/v1/badges/406d6c4432aa13942b0b/maintainability)](https://codeclimate.com/github/SkyAjax/yt-summarizer/maintainability)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# :fire: SUMMY - Your new favorite YouTube Summarizer
 
-Currently, two official plugins are available:
+![Screenshot preview](https://github.com/SkyAjax/yt-summarizer/assets/45942344/fb6568a3-a4fb-409e-9f5e-b2edc447a0b9 "Main Window")
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## :open_book: Project description:
 
-## Expanding the ESLint configuration
+:pencil2: Summy is YouTube Summarizer that uses the power of AI (ChatGPT4) to provide you a summary of any video on YouTube.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+:magic_wand: The design is pretty simple, just provide the link to the video on YouTube and get bullet list of all the key information about the context video
 
-- Configure the top-level `parserOptions` property like this:
+## :rocket: Give it a try:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+[Main link](google.com)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## :question: How to install:
+
+Make sure that you have Node.js v.18 or higher. Then,
+
+1. Clone
+   `git clone git@github.com:SkyAjax/Summy-YouTube-Video-Summarizer.git`
+2. Go to the project folder
+   `cd Summy-YouTube-Video-Summarizer`
+3. Install the package
+   `npm install`
