@@ -1,4 +1,3 @@
-// @ts-expect-error Import images
 import { summyLogo } from "../assets";
 
 const Hero = () => {
