@@ -12,7 +12,7 @@
 
 ## :rocket: Give it a try:
 
-[Main link](google.com)
+[Main link](https://summy-you-tube-video-summarizer.vercel.app/)
 
 ## :question: How to install:
 
